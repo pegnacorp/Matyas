@@ -40,11 +40,11 @@ public class SplashScreen extends AbstractScreen{
 		super.render(delta);
 		
 		if (game.getAssetManager().update()){
-			stage.addAction(Actions.sequence(Actions.delay(2.25f),
+			stage.addAction(Actions.sequence(Actions.delay(0.25f),
 											Actions.fadeOut(0.75f),
 											new Action(){
 												public boolean act(float delta){
-													game.setScreen(new MenuScreen(game));
+													game.setScreen(new IntroScreen(game));
 													return true;
 												}
 											}));
