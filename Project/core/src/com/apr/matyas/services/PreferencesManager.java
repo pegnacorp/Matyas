@@ -35,6 +35,7 @@ public class PreferencesManager {
 		getPreferences().putBoolean(PREFERENCES_SOUND, enabled);
 		getPreferences().flush();
 		
+		
 	}
 	public void setMusicEnabled(boolean enabled){
 		getPreferences().putBoolean(PREFERENCES_MUSIC, enabled);

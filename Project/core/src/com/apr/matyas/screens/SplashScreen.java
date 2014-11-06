@@ -1,6 +1,10 @@
 package com.apr.matyas.screens;
 
 import com.apr.matyas.MatyasGame;
+import com.apr.matyas.services.MatyasMusic;
+import com.apr.matyas.services.MatyasSound;
+import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.Texture.TextureFilter;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -31,7 +35,17 @@ public class SplashScreen extends AbstractScreen{
 		game.getAssetManager().load("game.atlas", com.badlogic.gdx.graphics.g2d.TextureAtlas.class);
 		game.getAssetManager().load("fonts/default-32.fnt",BitmapFont.class);
 		
-		
+		game.getAssetManager().load(MatyasSound.CLICK.getFileName(), Sound.class);
+		game.getAssetManager().load(MatyasSound.DROP.getFileName(), Sound.class);
+		game.getAssetManager().load(MatyasSound.GAME.getFileName(), Sound.class);
+		game.getAssetManager().load(MatyasSound.GOOD.getFileName(), Sound.class);
+		game.getAssetManager().load(MatyasSound.HIT.getFileName(), Sound.class);
+		game.getAssetManager().load(MatyasSound.KIDS.getFileName(), Sound.class);
+		game.getAssetManager().load(MatyasSound.LANZAR.getFileName(), Sound.class);
+		game.getAssetManager().load(MatyasSound.OPEN.getFileName(), Sound.class);
+		game.getAssetManager().load(MatyasSound.WRRONG.getFileName(), Sound.class);
+		game.getAssetManager().load(MatyasMusic.MENU_MUSIC.getFileName(), Music.class);
+		game.getAssetManager().load(MatyasMusic.TITLE_MUSIC.getFileName(), Music.class);
 		
 	}
 	

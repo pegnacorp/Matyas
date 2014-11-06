@@ -14,6 +14,10 @@ com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle: {
 	default: { down: boton_iniciar_pressed, up: boton_iniciar_pressed },
 	iniciar: { down: boton_iniciar_pressed, up: boton_iniciar_normal },
 	flores:  { down: boton_flores_pressed, up: boton_flores_normal },
+	torres:  { down: boton_torres_pressed, up: boton_torres_normal },
+	mangos:  { down: boton_mango_pressed, up: boton_mango_normal },
+	venado:  { down: boton_venado_pressed, up: boton_venado_normal },
+	pelota:  { down: boton_pelota_pressed, up: boton_pelota_normal },
 
 },
 com.badlogic.gdx.scenes.scene2d.ui.TextButton$TextButtonStyle: {

@@ -1,8 +1,8 @@
 package com.apr.matyas;
 
+import com.apr.matyas.game.World;
 import com.apr.matyas.screens.SplashScreen;
 import com.apr.matyas.services.*;
-import com.apr.matyas.world.World;
 import com.apr.matyas.world.WorldRenderer;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
@@ -52,7 +52,7 @@ public class MatyasGame extends Game{
 	 */
 	private PreferencesManager preferencesManager;
 	
-	public World world;
+	private World world;
 	
 	public WorldRenderer renderer;
 	
@@ -76,6 +76,10 @@ public class MatyasGame extends Game{
 		return preferencesManager;
 	}
 	
+	public World getWorld(){
+		return world;
+	}
+	
 	public MatyasGame(){
 		
 	}
@@ -87,10 +91,11 @@ public class MatyasGame extends Game{
 		preferencesManager = new PreferencesManager();
 		
 		profileManager = new ProfileManager();
+		world = new World(profileManager.retrieveGameState());
 		
-		musicManager = new MusicManager();
+		musicManager = new MusicManager(manager);
 		
-		soundManager = new SoundManager();
+		soundManager = new SoundManager(manager);
 		
 	}
 	
