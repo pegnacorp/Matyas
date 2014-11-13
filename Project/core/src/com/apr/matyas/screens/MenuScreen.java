@@ -1,7 +1,7 @@
 package com.apr.matyas.screens;
 
 import com.apr.matyas.MatyasGame;
-import com.apr.matyas.game.Level;
+import com.apr.matyas.game.MiniGame;
 import com.apr.matyas.services.MatyasSound;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -42,14 +42,15 @@ public class MenuScreen extends AbstractScreen{
 		table.add(labelXP).colspan(3);
 		table.row();
 		
-		Array<Level> levels = game.getWorld().getGameState().levels;
+		Array<MiniGame> minigames = game.getWorld().getGameState().minigames;
 		int i=0;
-		for (Level level: levels){
-			Button gameButton = new Button(getSkin(),level.name);
+		for (final MiniGame miniGame: minigames){
+			Button gameButton = new Button(getSkin(),miniGame.name);
 			gameButton.addListener(new ClickListener(){
 				public void clicked(InputEvent event, float x, float y){
 					game.getSoundManager().play(MatyasSound.CLICK);
-					//Mandar a la pantalla correspondiente
+					game.getWorld().setCurrentGame(miniGame);
+					game.setScreen(new GameScreen(game));
 				}
 			});
 		//	gameButton.setDisabled(level.locked);
